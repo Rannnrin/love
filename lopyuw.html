@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffcccb;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            color: #ff69b4;
+            margin: 0;
+        }
+        .question {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .yes {
+            background-color: #32cd32;
+            color: white;
+        }
+        .no {
+            background-color: #ff4500;
+            color: white;
+        }
+        .heart {
+            display: none;
+            font-size: 5em;
+            color: red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .love-text {
+            display: none;
+            font-size: 2em;
+            color: #ff69b4;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>I Love You So Much Much Much</h1>
+    <div class="question">Do you love me?</div>
+    <button class="button yes" onclick="handleYes()">Yes</button>
+    <button class="button no" onclick="handleNo()">No</button>
+
+    <div class="heart">❤️</div>
+    <div class="love-text">I Love You!</div>
+
+    <script>
+        function handleYes() {
+            document.querySelector('.heart').style.display = 'block';
+            document.querySelector('.love-text').style.display = 'block';
+        }
+
+        function handleNo() {
+            const yesButton = document.querySelector('.yes');
+            yesButton.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                yesButton.style.transform = 'scale(1)';
+            }, 300);
+        }
+    </script>
+
+</body>
+</html>
